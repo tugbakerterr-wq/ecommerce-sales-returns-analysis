@@ -4,7 +4,6 @@ Bu projede, popüler **Online Retail II** veri setini ele alarak bir e-ticaret �
 
 Amacım ham veriden işe yarar içgörüler çıkarıp, karar vericilerin tek bakışta durumu görebileceği bir yönetici panosu hazırlamaktı.
 
----
 
 ## 🖼️ Dashboard
 ![E-Ticaret Dashboard](image.png)
@@ -42,5 +41,5 @@ Amacım ham veriden işe yarar içgörüler çıkarıp, karar vericilerin tek ba
 ## 📁 Dosyalar
 * `ecommerce_analysis_queries.sql`: Yazdığım ve optimize ettiğim 8 analitik SQL sorgusu.
 * `Online Retail Dashboard.pbix`: Tasarladığım Power BI panosu ve veri modeli.
-* `E-Ticaret_Satis_Analiz_Raporu.docx`: Detaylı analiz ve raporlama belgem.
-* `image.png`: Panonun genel ekran görüntüsü.
+* `E-Ticaret_Satis_Analiz_Raporu.docx`: Detaylı analiz ve raporlama belgesi.
+* `image.png`: Panonun ekran görüntüsü.
