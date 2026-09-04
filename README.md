@@ -39,5 +39,5 @@ Projenin temel amacı, ham verilerden anlamlı içgörüler elde edilmesi ve kar
 ## 📁 Dosyalar
 * `ecommerce_analysis_queries.sql`: Yazdığım ve optimize ettiğim 8 analitik SQL sorgusu.
 * `Online Retail Dashboard.pbix`: Tasarladığım Power BI panosu ve veri modeli.
-* `E-Ticaret_Satis_Analiz_Raporu.docx`: Detaylı analiz ve raporlama dökümanı.
+* `E-commerce_sales_analysis_report.docx`: Detaylı analiz ve raporlama dökümanı.
 * `image.png`: Panonun ekran görüntüsü.
