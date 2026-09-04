@@ -1,10 +1,9 @@
 /* ==============================================================================
-   PROJE: E-Ticaret Satýþ ve Ýade Performans Analizi (2010 - 2011)
-   VERÝ KAYNAÐI: Online Retail II Data Set (UCI Machine Learning / Kaggle)
-   ARAÇLAR: PostgreSQL / MySQL / Power BI
+   PROJE: E-Ticaret SatÄ±s ve Iade Performans Analizi(2010-2011)
+Veri KaynagÄ±:Online Retial II Data Set (UCI Machine Learning / Kaggle)
    ============================================================================== */
 
--- 1. ADIM: Tablolardaki Toplam Satýr Sayýlarýnýn Kontrol Edilmesi
+-- 1. ADIM: Tablolardaki Toplam SatÄ±r SayÄ±larÄ±nÄ±n Kontrol Edilmesi
 SELECT 
     'Sales' AS Tablo, 
     COUNT(*) AS ToplamSatir 
@@ -16,7 +15,7 @@ SELECT
 FROM returns;
 
 
--- 2. ADIM: Genel Finansal Göstergeler (Brüt Satýþ, Toplam Ýade, Net Ciro ve Ýade Oraný)
+-- 2. ADIM: Genel Finansal GÃ¶stergeler (BrÃ¼t SatÄ±s, Toplam Iade, Net Ciro ve Iade OranÄ±)
 SELECT 
     ROUND(SUM(s.TotalPrice), 2) AS BrutSatis,
     ROUND((SELECT SUM(ReturnAmount) FROM returns), 2) AS ToplamIade,
@@ -25,7 +24,7 @@ SELECT
 FROM sales s;
 
 
--- 3. ADIM: En Çok Ciro Getiren Ýlk 10 Ürün (Top 10 Revenue Products)
+-- 3. ADIM: En Ã‡ok Ciro Getiren Ilk 10 ÃœrÃ¼n 
 SELECT 
     Description,
     SUM(Quantity) AS ToplamSatilanAdet,
@@ -36,7 +35,7 @@ ORDER BY ToplamKazanc DESC
 LIMIT 10;
 
 
--- 4. ADIM: En Yüksek Ýade Tutarýna Sahip Ýlk 10 Ürün (Finansal Kayýp Analizi)
+-- 4. ADIM: En YÃ¼ksek Iade TutarÄ±na Sahip Ilk 10 ÃœrÃ¼n 
 SELECT 
     Description,
     SUM(ABS(Quantity)) AS ToplamIadeAdedi,
@@ -47,7 +46,7 @@ ORDER BY ToplamIadeTutari DESC
 LIMIT 10;
 
 
--- 5. ADIM: Ülkelere Göre Sipariþ Hacmi ve Satýþ Cirosu (Top 10 Ülke)
+-- 5. ADIM: Ãœlkelere GÃ¶re Siparis Hacmi ve SatÄ±s Cirosu (Top 10 Ãœlke)
 SELECT
     Country, 
     COUNT(DISTINCT Invoice) AS ToplamSiparisSayisi,
@@ -58,7 +57,7 @@ ORDER BY ToplamCiro DESC
 LIMIT 10;
 
 
--- 6. ADIM: En Çok Harcama Yapan Ýlk 5 Müþteri (VIP Müþteri Analizi)
+-- 6. ADIM: En Ã‡ok Harcama Yapan Ilk 5 MÃ¼steri (VIP MÃ¼steri Analizi)
 SELECT 
     Customer_ID,
     COUNT(DISTINCT Invoice) AS ToplamSiparis,
@@ -69,13 +68,13 @@ ORDER BY ToplamHarcama DESC
 LIMIT 5;
 
 
--- 7. ADIM: Ortalama Sepet Tutarý (Average Order Value - AOV)
+-- 7. ADIM: Ortalama Sepet TutarÄ± (Average Order Value - AOV)
 SELECT 
     ROUND(SUM(TotalPrice) / COUNT(DISTINCT Invoice), 2) AS OrtalamaSepetTutari
 FROM sales;
 
 
--- 8. ADIM: Ürün Bazlý Brüt Satýþ, Ýade Tutarý ve Gerçek Net Ciro Karþýlaþtýrmasý
+-- 8. ADIM: ÃœrÃ¼n BazlÄ± BrÃ¼t SatÄ±s, Iade TutarÄ± ve GerÃ§ek Net Ciro KarsÄ±lastÄ±rmasÄ±
 WITH SatisOzeti AS (
     SELECT 
         StockCode, 
