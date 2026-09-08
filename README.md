@@ -19,7 +19,7 @@ Projenin temel amacı, ham verilerden anlamlı içgörüler elde edilmesi ve kar
 ### 2. SQL ile Veri Analitiği & İş Mantığı
   * Satış ve iade hareketlerini ayırıp toplam satır sayılarını doğrulandı.
   * Gruplamalar (`GROUP BY`), tekil sayımlar (`COUNT DISTINCT`) ve filtreler kullanarak ciro, iade ve sepet ortalamaları çıkarıldı.
-  * Satış ve iadeleri (`CTE` ve `JOIN`) yapılarıyla birleştirerek ürün bazında gerçek net ciroları hesapları gerçekleştirildi.
+  * Satış ve iadeleri (`CTE` ve `JOIN`) birleştirerek ürün bazında gerçek net ciroları hesapları gerçekleştirildi.
 
 ### 3. Power BI ile Görselleştirme:
   * Üst kısma en kritik metrikleri (Brüt Satış, İade, Sipariş ve Müşteri Sayısı) KPI kartı kullanılarak sunuldu.
